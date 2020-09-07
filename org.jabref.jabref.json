@@ -15,7 +15,7 @@
             "name" : "JabRef",
             "buildsystem" : "simple",
             "build-commands" : [
-                "tar -xzf JabRef-5.0-portable_linux.tar.gz --directory=/app/ --strip-components=1",
+                "tar -xzf JabRef-5.1-portable_linux.tar.gz --directory=/app/ --strip-components=1",
                 "install -D -m0644 org.jabref.jabref.png /app/share/icons/hicolor/128x128/apps/org.jabref.jabref.png",
                 "install -D -m0644 org.jabref.jabref.desktop /app/share/applications/org.jabref.jabref.desktop",
                 "install -D -m0644 org.jabref.jabref.appdata.xml /app/share/metainfo/org.jabref.jabref.appdata.xml",
@@ -24,8 +24,8 @@
             "sources" : [
                 {
                     "type" : "file",
-                    "url": "https://github.com/JabRef/jabref/releases/download/v5.0/JabRef-5.0-portable_linux.tar.gz",
-                    "sha256": "2231df4a429e819f795483419bb40242ad1f0dc2a7893e546e62649b6a275e6c"
+                    "url": "https://github.com/JabRef/jabref/releases/download/v5.1/JabRef-5.1-portable_linux.tar.gz",
+                    "sha256": "829cd4a1dda821da10d41a48d791ba0c7a999f0ecf2f23fc7f6ae0ec9708c611"
                 },
                 {
                     "type": "file",
