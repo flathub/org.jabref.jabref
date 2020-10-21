@@ -19,7 +19,8 @@
                 "install -D -m0644 org.jabref.jabref.png /app/share/icons/hicolor/128x128/apps/org.jabref.jabref.png",
                 "install -D -m0644 org.jabref.jabref.desktop /app/share/applications/org.jabref.jabref.desktop",
                 "install -D -m0644 org.jabref.jabref.appdata.xml /app/share/metainfo/org.jabref.jabref.appdata.xml",
-                "install -D -m0755 JabRef-launcher /app/bin/JabRef-launcher"
+                "install -D -m0755 JabRef-launcher /app/bin/JabRef-launcher",
+                "gcc xdg-open.c `pkg-config --cflags --libs glib-2.0 gio-2.0 gio-unix-2.0` -o /app/bin/xdg-open"
             ],
             "sources" : [
                 {
@@ -42,6 +43,10 @@
                 {
                     "type": "file",
                     "path": "org.jabref.jabref.png"
+                },
+                {
+                    "type": "file",
+                    "path": "xdg-open.c"
                 }
             ]
         }

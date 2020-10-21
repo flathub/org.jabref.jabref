@@ -1,0 +1,3 @@
+# Flatpak build files
+build-dir
+.flatpak-builder
