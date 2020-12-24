@@ -15,6 +15,7 @@
   </description>
   
   <releases>
+        <release version="5.2" date="2020-12-24"/>
         <release type="stable" version="5.1" date="2020-08-30T00:00:00Z">
         </release>
   </releases>
