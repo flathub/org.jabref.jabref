@@ -4,34 +4,45 @@ runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: JabRef
 finish-args:
-- "--socket=x11"
-- "--share=network"
-- "--filesystem=home"
-- "--device=dri"
-- "--talk-name=org.freedesktop.Flatpak"
+  - "--socket=x11"
+  - "--share=network"
+  - "--filesystem=home"
+  - "--device=dri"
+  - "--talk-name=org.freedesktop.Flatpak"
 modules:
-- name: JabRef
-  buildsystem: simple
-  build-commands:
-  - tar -xzf JabRef-*-portable_linux.tar.gz --directory=/app/ --strip-components=1
-  - install -D -m0644 org.jabref.jabref.png /app/share/icons/hicolor/128x128/apps/org.jabref.jabref.png
-  - install -D -m0644 org.jabref.jabref.desktop /app/share/applications/org.jabref.jabref.desktop
-  - install -D -m0644 org.jabref.jabref.appdata.xml /app/share/metainfo/org.jabref.jabref.appdata.xml
-  sources:
-  - type: file
-    only-arches:
-      - x86_64
-    url: https://github.com/JabRef/jabref/releases/download/v5.1/JabRef-5.1-portable_linux.tar.gz
-    x-checker-data:
-      type: html
-      url: https://github.com/JabRef/jabref/releases/latest
-      version-pattern: JabRef Version ((?:\d+\.)?\d+)
-      url-template: https://github.com/JabRef/jabref/releases/download/v$version/JabRef-$version-portable_linux.tar.gz
-    sha256: 829cd4a1dda821da10d41a48d791ba0c7a999f0ecf2f23fc7f6ae0ec9708c611
-  - type: file
-    path: org.jabref.jabref.desktop
-  - type: file
-    path: org.jabref.jabref.appdata.xml
-  - type: file
-    path: org.jabref.jabref.png
-
+  - name: JabRef
+    buildsystem: simple
+    build-commands:
+      - tar -xzf JabRef-*-portable_linux.tar.gz --directory=/app/ --strip-components=1
+      - install -D -m0644 org.jabref.jabref.png /app/share/icons/hicolor/128x128/apps/org.jabref.jabref.png
+      - install -D -m0644 org.jabref.jabref.desktop /app/share/applications/org.jabref.jabref.desktop
+      - install -D -m0644 org.jabref.jabref.appdata.xml /app/share/metainfo/org.jabref.jabref.appdata.xml
+      - install -D -m0755 texstudio.sh /app/bin/texstudio
+      - install -D -m0755 texmaker.sh /app/bin/texmaker
+      - install -D -m0755 vim.sh /app/bin/vim
+      - install -D -m0755 emacsclient.sh /app/bin/emacsclient
+    sources:
+      - type: file
+        only-arches:
+          - x86_64
+        url: https://github.com/JabRef/jabref/releases/download/v5.1/JabRef-5.1-portable_linux.tar.gz
+        x-checker-data:
+          type: html
+          url: https://github.com/JabRef/jabref/releases/latest
+          version-pattern: JabRef Version ([\d\.]*)
+          url-template: https://www.fosshub.com/JabRef.html?dwl=JabRef-$version-portable_linux.tar.gz
+        sha256: 829cd4a1dda821da10d41a48d791ba0c7a999f0ecf2f23fc7f6ae0ec9708c611
+      - type: file
+        path: org.jabref.jabref.desktop
+      - type: file
+        path: org.jabref.jabref.appdata.xml
+      - type: file
+        path: org.jabref.jabref.png
+      - type: file
+        path: texstudio.sh
+      - type: file
+        path: texmaker.sh
+      - type: file
+        path: vim.sh
+      - type: file
+        path: emacsclient.sh
