@@ -4,34 +4,34 @@ runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: JabRef
 finish-args:
-- "--socket=x11"
-- "--share=network"
-- "--filesystem=home"
-- "--device=dri"
-- "--talk-name=org.freedesktop.Flatpak"
+  - --socket=x11
+  - --share=network
+  - --filesystem=home
+  - --device=dri
+  - --talk-name=org.freedesktop.Flatpak
 modules:
-- name: JabRef
-  buildsystem: simple
-  build-commands:
-  - tar -xzf JabRef-*-portable_linux.tar.gz --directory=/app/ --strip-components=1
-  - install -D -m0644 org.jabref.jabref.png /app/share/icons/hicolor/128x128/apps/org.jabref.jabref.png
-  - install -D -m0644 org.jabref.jabref.desktop /app/share/applications/org.jabref.jabref.desktop
-  - install -D -m0644 org.jabref.jabref.appdata.xml /app/share/metainfo/org.jabref.jabref.appdata.xml
-  sources:
-  - type: file
-    only-arches:
-      - x86_64
-    url: https://github.com/JabRef/jabref/releases/download/v5.1/JabRef-5.1-portable_linux.tar.gz
-    x-checker-data:
-      type: html
-      url: https://github.com/JabRef/jabref/releases/latest
-      version-pattern: JabRef Version ((?:\d+\.)?\d+)
-      url-template: https://github.com/JabRef/jabref/releases/download/v$version/JabRef-$version-portable_linux.tar.gz
-    sha256: 829cd4a1dda821da10d41a48d791ba0c7a999f0ecf2f23fc7f6ae0ec9708c611
-  - type: file
-    path: org.jabref.jabref.desktop
-  - type: file
-    path: org.jabref.jabref.appdata.xml
-  - type: file
-    path: org.jabref.jabref.png
+  - name: JabRef
+    buildsystem: simple
+    build-commands:
+      - tar -xzf JabRef-*-portable_linux.tar.gz --directory=/app/ --strip-components=1
+      - install -D -m0644 org.jabref.jabref.png /app/share/icons/hicolor/128x128/apps/org.jabref.jabref.png
+      - install -D -m0644 org.jabref.jabref.desktop /app/share/applications/org.jabref.jabref.desktop
+      - install -D -m0644 org.jabref.jabref.appdata.xml /app/share/metainfo/org.jabref.jabref.appdata.xml
+    sources:
+      - type: file
+        only-arches:
+          - x86_64
+        url: https://github-production-release-asset-2e65be.s3.amazonaws.com/17634071/99e1cd80-4612-11eb-9c75-2c265a3bc648?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20201224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201224T180441Z&X-Amz-Expires=300&X-Amz-Signature=e315e77afe28e69f3fa9587ca29129f72bc029a2dc5e454344016b8f8dae4bdc&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=17634071&response-content-disposition=attachment%3B+filename%3DJabRef-5.2-portable_linux.tar.gz&response-content-type=application%2Foctet-stream
+        x-checker-data:
+          type: html
+          url: https://github.com/JabRef/jabref/releases/latest
+          version-pattern: JabRef Version ((?:\d+\.)?\d+)
+          url-template: https://github.com/JabRef/jabref/releases/download/v$version/JabRef-$version-portable_linux.tar.gz
+        sha256: 3ff1c05da260748b958ea4273317661ef5818002e522c625a67ab419732a758c
+      - type: file
+        path: org.jabref.jabref.desktop
+      - type: file
+        path: org.jabref.jabref.appdata.xml
+      - type: file
+        path: org.jabref.jabref.png
 
