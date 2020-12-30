@@ -21,6 +21,7 @@ modules:
       - install -D -m0755 texmaker.sh /app/bin/texmaker
       - install -D -m0755 vim.sh /app/bin/vim
       - install -D -m0755 emacsclient.sh /app/bin/emacsclient
+      - install -D -m0755 soffice.sh /app/bin/soffice
     sources:
       - type: file
         only-arches:
@@ -45,3 +46,5 @@ modules:
         path: vim.sh
       - type: file
         path: emacsclient.sh
+      - type: file
+        path: soffice.sh
