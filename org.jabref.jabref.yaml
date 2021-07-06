@@ -4,11 +4,11 @@ runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: JabRef
 finish-args:
-  - "--socket=x11"
-  - "--share=network"
-  - "--filesystem=home"
-  - "--device=dri"
-  - "--talk-name=org.freedesktop.Flatpak"
+  - --socket=x11
+  - --share=network
+  - --filesystem=home
+  - --device=dri
+  - --talk-name=org.freedesktop.Flatpak
 modules:
   - name: JabRef
     buildsystem: simple
@@ -26,8 +26,8 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/JabRef/jabref/releases/download/v5.2/JabRef-5.2-portable_linux.tar.gz
-        sha256: 3ff1c05da260748b958ea4273317661ef5818002e522c625a67ab419732a758c
+        url: https://github.com/JabRef/jabref/releases/download/v5.3/JabRef-5.3-portable_linux.tar.gz
+        sha256: 16eb083fe5f9376501175a533750dc83b18094ca45cc0ba1920b3aee1dee9c52
         x-checker-data:
           type: anitya
           project-id: 8903
