@@ -29,9 +29,10 @@ modules:
         url: https://github.com/JabRef/jabref/releases/download/v5.2/JabRef-5.2-portable_linux.tar.gz
         sha256: 3ff1c05da260748b958ea4273317661ef5818002e522c625a67ab419732a758c
         x-checker-data:
-          type: anitya
-          project-id: 8903
-          url-template: https://github.com/JabRef/jabref/releases/download/v$version/JabRef-$version-portable_linux.tar.gz
+          type: json
+          url: https://api.github.com/repos/jabref/jabref/releases/latest
+          version-query: .tag_name | sub(\"^v\"; \"\")
+          url-query: .assets[] | select(.name==\"JabRef-\" + $version + \"portable_linux.tar.gz\") | .browser_download_url
       - type: file
         path: org.jabref.jabref.desktop
       - type: file
