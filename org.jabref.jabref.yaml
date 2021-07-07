@@ -31,8 +31,8 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/jabref/jabref/releases/latest
-          version-query: .tag_name | sub(\"^v\"; \"\")
-          url-query: .assets[] | select(.name==\"JabRef-\" + $version + \"portable_linux.tar.gz\") | .browser_download_url
+          version-query: '.tag_name | sub("^v";"")'
+          url-query: '.assets[] | select(.name=="JabRef-" + $version + "-portable_linux.tar.gz") | .browser_download_url'
       - type: file
         path: org.jabref.jabref.desktop
       - type: file
