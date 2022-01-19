@@ -26,8 +26,8 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/JabRef/jabref/releases/download/v5.4/JabRef-5.4-portable_linux.tar.gz
-        sha256: 6a36420d58e507672d561d3a47a84c12a5b014b98d2d1b7774413b7f99208eb5
+        url: https://github.com/JabRef/jabref/releases/download/v5.5/JabRef-5.5-portable_linux.tar.gz
+        sha256: f4c1cd7a1c809aeec2881a75ae06f8cd3912aa68d79b6b5c9a218a14115aa4a2
         x-checker-data:
           type: anitya
           project-id: 8903
