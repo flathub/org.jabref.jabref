@@ -10,6 +10,7 @@ finish-args:
   - --device=dri
   - --talk-name=org.freedesktop.Flatpak
 modules:
+  - shared-modules/libcanberra/libcanberra.json
   - name: JabRef
     buildsystem: simple
     build-commands:
