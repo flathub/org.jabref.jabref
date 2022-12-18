@@ -26,13 +26,14 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/JabRef/jabref/releases/download/v5.7/JabRef-5.7-portable_linux.tar.gz
-        sha256: ab501f51487fbb9f01332f9a32331387545fcf3f77aaec38430c3fed62a4ae0d
+        url: https://github.com/JabRef/jabref/releases/download/v5.8/JabRef-5.8-portable_linux.tar.gz
+        sha256: 2a01b13435d6c7f5cbe808a757e4106db19d3f59ff0a64213f6ee90ddb90c648
         x-checker-data:
           type: json
           url: https://api.github.com/repos/jabref/jabref/releases/latest
-          version-query: '.tag_name | sub("^v";"")'
-          url-query: '.assets[] | select(.name=="JabRef-" + $version + "-portable_linux.tar.gz") | .browser_download_url'
+          version-query: .tag_name | sub("^v";"")
+          url-query: .assets[] | select(.name=="JabRef-" + $version + "-portable_linux.tar.gz")
+            | .browser_download_url
       - type: file
         path: org.jabref.jabref.desktop
       - type: file
