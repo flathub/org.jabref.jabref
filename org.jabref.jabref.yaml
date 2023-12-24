@@ -26,8 +26,8 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/JabRef/jabref/releases/download/v5.11/JabRef-5.11-portable_linux.tar.gz
-        sha256: 51fe8fbb46aa36484505d898fffd4bf23efdfa7afba8ace6cee008cb355f815c
+        url: https://github.com/JabRef/jabref/releases/download/v5.12/JabRef-5.12-portable_linux.tar.gz
+        sha256: 82bfcf52e96086fb5567424d5d7c8b384c03d5a9b8de37a37265a6233fe58465
         x-checker-data:
           type: json
           url: https://api.github.com/repos/jabref/jabref/releases/latest
