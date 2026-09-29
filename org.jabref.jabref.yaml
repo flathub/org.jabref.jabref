@@ -1,6 +1,6 @@
 app-id: org.jabref.jabref
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: JabRef
 finish-args:
@@ -27,14 +27,15 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/JabRef/jabref/releases/download/v5.15/JabRef-5.15-portable_linux.tar.gz
-        sha256: ae2a365bcac73f73e8fbffc0363e125c5ff6453ad89b90ac5891445ceb37e9bb
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/jabref/jabref/releases/latest
-          version-query: .tag_name | sub("^v";"")
-          url-query: .assets[] | select(.name=="JabRef-" + $version + "-portable_linux.tar.gz")
-            | .browser_download_url
+        url: https://github.com/JabRef/jabref/releases/download/v6.0-beta.1/JabRef-portable_linux.tar.gz
+        sha256: ed1f771e7b3284b6e61fada14fd89b4822bb9bff2f5b2dc3f5b3034ab471f798
+        dest-filename: JabRef-6.0-beta.1-portable_linux.tar.gz
+      - type: file
+        only-arches:
+          - aarch64
+        url: https://github.com/JabRef/jabref/releases/download/v6.0-beta.1/JabRef-portable_linux_arm64.tar.gz
+        sha256: 551bf1b5627e17f8311b96bd3a6ef234ace601812361e5db3375067d3b70b9e6
+        dest-filename: JabRef-6.0-beta.1-portable_linux.tar.gz
       - type: file
         path: org.jabref.jabref.desktop
       - type: file
